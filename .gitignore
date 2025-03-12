@@ -4,7 +4,7 @@
 .dev/logs/
 .dev/build/
 .dev/dist/
-.dev/Output/
+#.dev/Output/
 
 # PyInstaller & kompiliertes Python
 *.spec

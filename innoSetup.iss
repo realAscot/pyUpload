@@ -1,5 +1,5 @@
 ; Define AppVersion as a constant
-#define AppVersion "0.1.0"
+#define AppVersion "1.0.0"
 #define BasePath ".\dev"
 
 ; Source: "{#BasePath}\*"; DestDir: "{app}"; Flags: ignoreversion;
