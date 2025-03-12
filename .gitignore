@@ -1,0 +1,19 @@
+# Build- und Cache-Ordner ignorieren
+__pycache__/
+upload/
+logs/
+build/
+dist/
+/pyUpload.*/
+Output/
+
+# Virtuelle Umgebung ignorieren (falls vorhanden)
+.venv/
+.env/
+.idea/
+.vscode/
+*.pem
+
+# PyInstaller-exe-Dateien ignorieren
+*.spec
+pyUpload.exe
