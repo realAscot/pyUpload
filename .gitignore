@@ -1,19 +1,22 @@
 # Build- und Cache-Ordner ignorieren
-__pycache__/
-upload/
-logs/
-build/
-dist/
+.dev/__pycache__/
+.dev/upload/
+.dev/logs/
+.dev/build/
+.dev/dist/
 /pyUpload.*/
-Output/
+.dev/Output/
 
 # Virtuelle Umgebung ignorieren (falls vorhanden)
-.venv/
-.env/
-.idea/
-.vscode/
-*.pem
+.dev/.venv/
+.dev/.env/
+.dev/.idea/
+.dev/.vscode/
+.dev/*.pem
 
 # PyInstaller-exe-Dateien ignorieren
 *.spec
 pyUpload.exe
+
+# Sonstiges
+Desktop.ini 
