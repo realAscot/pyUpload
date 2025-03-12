@@ -29,15 +29,18 @@ Es gibt drei Möglichkeiten, pyUpload zu nutzen:
 
 1. Stelle sicher, dass **Python 3** auf deinem System installiert ist.
 2. Installiere alle benötigten Abhängigkeiten mit folgendem Befehl:
-   ```sh
+
+   ```
    pip install -r requirements.txt
    ```
 3. Starte den Server mit:
-   ```sh
+
+   ```
    python pyUpload.py
    ```
 4. Falls du keine grafische Benutzeroberfläche benötigst, kannst du den Server im Konsolenmodus starten:
-   ```sh
+
+   ```
    python pyUpload.py --nogui
    ```
 
@@ -49,11 +52,13 @@ Falls du keine Python-Installation benötigst, kannst du die vorgefertigte **ZIP
 2. Entpacke die ZIP-Datei in einen beliebigen Ordner.
 3. Starte die enthaltene `pyUpload.exe`.
 4. Falls die grafische Benutzeroberfläche nicht benötigt wird, kann die `pyUpload.exe` direkt in der Konsole mit `--nogui` gestartet werden:
-   ```sh
+   
+   ```
    pyUpload.exe --nogui
    ```
 5. Eine Übersicht aller verfügbaren Befehle und Optionen erhältst du mit:
-   ```sh
+   
+   ```
    pyUpload.exe --help
    ```
 
@@ -64,6 +69,7 @@ Lade die ZIP-Datei mit der virtuellen Installationsumgebung herunter und starte 
 ### Zugriff auf die Weboberfläche
 
 - Sobald der Server läuft, kann er über die lokale IP-Adresse aufgerufen werden:
+  
   ```
   https://<server-ip>:4443
   ```
@@ -87,7 +93,12 @@ Da pyUpload ein **selbstsigniertes SSL-Zertifikat** nutzt, wird es beim ersten Z
 - Alle **Uploads und Anfragen** werden in **zentralen sowie client-spezifischen Logdateien** gespeichert. Diese befinden sich im `logs/`-Verzeichnis.
 - Falls während der Nutzung von pyUpload **Probleme auftreten**, bietet ein Blick in diese Logdateien wertvolle Hinweise zur Fehlerbehebung.
 
+### Autoren & Mitwirkende
+
+Danke an alle, die zu diesem Projekt beigetragen haben!
+
+- **[Adam Skotarczak](https://github.com/AJaquet)** - Projektleitung & Entwicklung
+
 ### Lizenz und Autor
 
 - **Entwickelt von Adam Skotarczak (C) 2025**.
-

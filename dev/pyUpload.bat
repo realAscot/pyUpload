@@ -22,7 +22,7 @@ if not exist .venv (
 
 :: Aktivieren der virtuellen Umgebung
 call .venv\Scripts\activate
-echo "Virtuelle Umgebung gestartet!"
+echo Virtuelle Umgebung in pyUpload.bat gestartet!
 
 :: Starten des Upload-Servers mit Übergabe aller übergebenen Parameter
 python pyUpload.py %*
@@ -30,4 +30,4 @@ python pyUpload.py %*
 :: Nach Beenden der Anwendung
 deactivate
 
-echo "Virtuelle Umgebung beendet!"
+echo Virtuelle Umgebung beendet!

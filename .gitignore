@@ -4,11 +4,10 @@
 .dev/logs/
 .dev/build/
 .dev/dist/
-#.dev/Output/
 
 # PyInstaller & kompiliertes Python
 *.spec
-*.exe
+#*.exe
 *.dll
 *.so
 *.dylib
@@ -29,3 +28,10 @@
 Desktop.ini
 Thumbs.db
 .DS_Store
+
+# .exe-Dateien überall ignorieren...
+*.exe
+
+# ... außer im .dev/Output/ Verzeichnis (Ausnahme!)
+!./Output/
+!./Output/*

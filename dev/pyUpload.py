@@ -2,7 +2,7 @@
 
 # © 2025 Adam Skotarczak (adam@skotarczak.net)
 # Dieses Softwarepaket darf nicht ohne Genehmigung weiterverbreitet werden!
-# Version 1.2.2 (05.03.2025)
+# Version 1.0.0 (12.03.2025)
 
 import os
 import sys
@@ -18,6 +18,34 @@ from cryptography import x509
 from cryptography.x509.oid import NameOID
 from cryptography.hazmat.primitives import hashes, serialization
 from cryptography.hazmat.primitives.asymmetric import rsa
+
+# -------------------------------------------------------------------
+# Virtuelle Umgebung (aktuell noch in der pyUpload.bat)
+# -------------------------------------------------------------------
+
+# Name der virtuellen Umgebung
+VENV_DIR = ".venv"
+
+def activate_venv():
+    """Aktiviert die virtuelle Umgebung automatisch, falls sie nicht aktiv ist."""
+    if sys.prefix != os.path.abspath(VENV_DIR):
+        venv_path = os.path.join(os.path.dirname(__file__), VENV_DIR)
+
+        if os.name == "nt":  # Windows
+            activate_script = os.path.join(venv_path, "Scripts", "activate.bat")
+        else:  # Linux/macOS
+            activate_script = os.path.join(venv_path, "bin", "activate")
+
+        if os.path.exists(activate_script):
+            print(f"Aktiviere virtuelle Umgebung: {VENV_DIR}")
+            os.system(f'"{activate_script}"')
+        else:
+            print(f"FEHLER: Virtuelle Umgebung nicht gefunden ({VENV_DIR}). Bitte zuerst install.bat ausführen.")
+            sys.exit(1)
+
+# Virtuelle Umgebung aktivieren, wenn sie nicht aktiv ist
+
+activate_venv()
 
 # -------------------------------------------------------------------
 # Globale Konfigurationen & Verzeichnisse
