@@ -4,19 +4,28 @@
 .dev/logs/
 .dev/build/
 .dev/dist/
-/pyUpload.*/
 .dev/Output/
+
+# PyInstaller & kompiliertes Python
+*.spec
+*.exe
+*.dll
+*.so
+*.dylib
+*.pyd
 
 # Virtuelle Umgebung ignorieren (falls vorhanden)
 .dev/.venv/
 .dev/.env/
 .dev/.idea/
 .dev/.vscode/
+
+# Zertifikate und sensible Dateien
 .dev/*.pem
+*.crt
+*.key
 
-# PyInstaller-exe-Dateien ignorieren
-*.spec
-pyUpload.exe
-
-# Sonstiges
-Desktop.ini 
+# Sonstiges (Windows & macOS Systemdateien)
+Desktop.ini
+Thumbs.db
+.DS_Store

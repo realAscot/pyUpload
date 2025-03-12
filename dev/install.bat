@@ -26,9 +26,9 @@ for /f "tokens=1,2 delims=." %%a in ("%PYTHON_VERSION%") do (
 )
 
 :: Virtuelle Umgebung erstellen, falls sie nicht existiert
-if not exist venv (
+if not exist .venv (
     echo Erstelle virtuelle Server-Umgebung ...
-    python -m venv --copies venv
+    python -m venv --copies .venv
     if %ERRORLEVEL% NEQ 0 (
         echo Fehler beim Erstellen der virtuellen Umgebung!
         pause
@@ -37,7 +37,7 @@ if not exist venv (
 )
 
 :: Aktivieren der virtuellen Umgebung
-call venv\Scripts\activate
+call .venv\Scripts\activate
 
 :: Installieren der Abhängigkeiten
 echo Installiere Abhaengigkeiten aus dem Internet ...
