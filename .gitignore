@@ -4,6 +4,7 @@
 .app/logs/
 .app/build/
 .app/dist/
+releases/
 
 # PyInstaller & kompiliertes Python
 *.spec
