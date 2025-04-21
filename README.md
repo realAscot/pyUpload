@@ -1,104 +1,137 @@
-## pyUpload - Sicherer Datei-Upload-Server für eine einfache und sichere Dateiübertragung
+# pyUpload (TKInter Version)
 
-### Beschreibung
+![pyUpload 1.0 Logo](./assets/logo-1.0-alpha.png)
 
-pyUpload ist eine leistungsstarke und dennoch einfache Lösung für den sicheren Datei-Upload über HTTPS. Es richtet sich an Privatnutzer, die eine schnelle Möglichkeit suchen, Dateien zwischen Geräten zu übertragen, sowie an Unternehmen oder Teams, die eine sichere Lösung für den internen Datenaustausch benötigen. Dieses Programm eignet sich ideal, um Dateien schnell und unkompliziert von einem Smartphone oder einem anderen Gerät auf einen Computer zu übertragen. 
+## ⚠️ Projektstatus: Eingefroren – Nur noch Bugfixes  
 
-Anstatt zusätzliche Apps oder USB-Kabel zu nutzen, kann der Benutzer den Server starten, den automatisch generierten QR-Code mit dem Smartphone scannen und die Dateien direkt über die Weboberfläche hochladen. Der Computer speichert die hochgeladenen Dateien strukturiert in individuellen Verzeichnissen für jedes Gerät.
+Diese Version von **pyUpload** wird **nicht weiterentwickelt** und erhält nur noch Fehlerbehebungen.  
+Die neue Version mit Flask-Backend ist **BALD** verfügbar unter:  
 
-Zusätzlich erstellt pyUpload bei Bedarf automatisch ein selbstsigniertes SSL-Zertifikat, um eine verschlüsselte Verbindung sicherzustellen. Damit bleibt die Dateiübertragung geschützt und zuverlässig.
+🔗 **<https://github.com/realAscot/pyUpload2>**
 
-### Features – Die Vorteile von pyUpload auf einen Blick
+---
 
-- **Sichere Dateiübertragung per HTTPS** – Alle Daten werden verschlüsselt übertragen.
-- **Automatische Erstellung eines selbstsignierten SSL-Zertifikats** – Keine zusätzliche Konfiguration notwendig.
-- **Intuitive, webbasierte Benutzeroberfläche** – Einfach zu bedienen, keine Installation erforderlich.
-- **Strukturierte Speicherung** – Dateien werden in client-spezifischen Verzeichnissen gespeichert.
-- **Zentralisierte und client-spezifische Logging-Funktion** – Detaillierte Nachverfolgung aller Uploads.
-- **Flexible Nutzung mit oder ohne GUI** – Start als Desktop-Anwendung oder reine Konsolen-Version möglich.
-- **Schnelle Einrichtung** – Download, Entpacken und sofort loslegen!
+## pyUpload – Sicherer Datei-Upload-Server über HTTPS (lokal & offline)
 
-### Installationsanleitung – So startest du pyUpload
+Diese Version basiert auf **Tkinter (GUI + QR)** sowie einer optionalen **reinen CLI-Nutzung**.  
+Sie ist vollständig lokal lauffähig – ganz ohne Installation von externen Tools oder komplexen Abhängigkeiten.
 
-Es gibt drei Möglichkeiten, pyUpload zu nutzen:
-- **Manuelle Installation** in einer vorhandenen Python-Umgebung, in der alle notwendigen Bibliotheken manuell installiert werden.
-- **Nutzung einer vorgefertigten, ausführbaren .exe (Windows) Version**, die mit pyinstaller kompiliert wurde.
-- **Nutzung in einer virtuellen Python-Umgebung**, die automatisch durch `install.bat` eingerichtet wird. Anschließend kann das Programm mit `start.bat` gestartet werden.
+---
 
-#### 1. Manuelle Installation für Python-Nutzer
+## 🛠 Features
 
-1. Stelle sicher, dass **Python 3** auf deinem System installiert ist.
-2. Installiere alle benötigten Abhängigkeiten mit folgendem Befehl:
+- **HTTPS-gesicherter Datei-Upload**
+- **Selbstsigniertes SSL-Zertifikat bei Bedarf**
+- **QR-Code-basierte Verbindung für Smartphones**
+- **Client-spezifische Verzeichnisse und Logs**
+- **GUI und Konsolen-Modus verfügbar**
+- **automatische Einrichtung von `.venv` und Abhängigkeiten**
+- **kein Installationsskript mehr nötig – alles passiert beim Start von `main.py`**
 
-   ```
-   pip install -r requirements.txt
-   ```
-3. Starte den Server mit:
+---
 
-   ```
-   python pyUpload.py
-   ```
-4. Falls du keine grafische Benutzeroberfläche benötigst, kannst du den Server im Konsolenmodus starten:
+## 🚀 Schnellstart
 
-   ```
-   python pyUpload.py --nogui
+### ▶️ Für Windows:
+
+1. Lade das Projekt herunter oder klone es:  
+
+   ```sh
+
+   git clone https://github.com/realAscot/pyUpload
    ```
 
-#### 2. Nutzung der fertigen .exe Download-Version 
+2. Starte die App mit:  
 
-Falls du keine Python-Installation benötigst, kannst du die vorgefertigte **ZIP-Version** von pyUpload herunterladen. Diese enthält bereits alle notwendigen Dateien und ist sofort einsatzbereit.
-
-1. Lade die neueste **pyUpload.zip** von der offiziellen Website herunter, inklusive virtueller Umgebung. 
-2. Entpacke die ZIP-Datei in einen beliebigen Ordner.
-3. Starte die enthaltene `pyUpload.exe`.
-4. Falls die grafische Benutzeroberfläche nicht benötigt wird, kann die `pyUpload.exe` direkt in der Konsole mit `--nogui` gestartet werden:
-   
-   ```
-   pyUpload.exe --nogui
-   ```
-5. Eine Übersicht aller verfügbaren Befehle und Optionen erhältst du mit:
-   
-   ```
-   pyUpload.exe --help
+   ```cmd
+   start.cmd
    ```
 
-#### 3. Nutzung in virtueller Python-Umgebung
+   Alternativ in PowerShell:
 
-Lade die ZIP-Datei mit der virtuellen Installationsumgebung herunter und starte die `install.bat` durch Doppelklick. Es öffnet sich ein Konsolenfenster (CLI) und eine virtuelle Umgebung für pyUpload wird erstellt. Anschließend kann das Programm mit der `start.bat` gestartet werden. In der Grundeinstellung wird eine GUI mit QR-Code gestartet.
+   ```powershell
+   cmd /c start.cmd
+   ```
 
-### Zugriff auf die Weboberfläche
+### 🐧 Für Linux / macOS:
 
-- Sobald der Server läuft, kann er über die lokale IP-Adresse aufgerufen werden:
-  
-  ```
-  https://<server-ip>:4443
-  ```
-- Falls die GUI-Version gestartet wurde, erscheint ein **QR-Code**, der die Verbindungsadresse enthält. Dies ermöglicht eine einfache Verbindung mit Smartphones und Tablets.
+1. Stelle sicher, dass Python 3.8+ installiert ist:
 
-### Datei-Upload leicht gemacht – So funktioniert es
+   ```bash
+   python3 --version
+   ```
 
-1. Öffne die **Weboberfläche** im Browser.
-2. Wähle die gewünschte **Datei aus** und klicke auf **„Hochladen“**.
-3. Nach erfolgreichem Upload erscheint eine **Bestätigungsseite**, die den Abschluss der Übertragung bestätigt.
+2. Mache das Startscript ausführbar:
 
-### SSL-Zertifikatswarnung in Browsern umgehen
+   ```bash
+   chmod +x start.sh
+   ```
 
-Da pyUpload ein **selbstsigniertes SSL-Zertifikat** nutzt, wird es beim ersten Zugriff zu einer Warnung des Browsers kommen. Alternativ kann ein eigenes SSL-Zertifikat hinterlegt werden, indem die Zertifikats- und Schlüsseldateien `cert.pem` und `key.pem` durch eigene, signierte Zertifikate ersetzt werden. Um die verschlüsselte Verbindung zu akzeptieren, gibt es zwei Möglichkeiten:
+3. Starte die App:
 
-- In den meisten Browsern gibt es eine Option wie **„Erweitert“** oder **„Trotzdem fortfahren“**, um die Warnung zu übergehen.
-- Alternativ kann das Zertifikat **manuell importiert und als vertrauenswürdig markiert** werden, um künftige Warnmeldungen zu vermeiden.
+   ```bash
+   ./start.sh
+   ```
 
-### Logging und Fehlerbehandlung – Transparenz und Kontrolle
+---
 
-- Alle **Uploads und Anfragen** werden in **zentralen sowie client-spezifischen Logdateien** gespeichert. Diese befinden sich im `logs/`-Verzeichnis.
-- Falls während der Nutzung von pyUpload **Probleme auftreten**, bietet ein Blick in diese Logdateien wertvolle Hinweise zur Fehlerbehebung.
+Beim ersten Start wird automatisch:
 
-### Autoren & Mitwirkende
+- eine virtuelle Umgebung `.venv/` im `app/`-Verzeichnis erzeugt
+- `requirements.txt` installiert
+- das Programm danach neu aus der Umgebung gestartet
 
-Danke an alle, die zu diesem Projekt beigetragen haben!
+---
 
-- **[Adam Skotarczak](https://github.com/AJaquet)** - Projektleitung & Entwicklung
+## 🧩 Kommandozeilenoptionen
 
-### Lizenz und Autor
+```sh
+python app\main.py --nogui     # Start ohne GUI / QR
+python app\main.py --port 9999 # Custom-Port verwenden
+```
 
-- **Entwickelt von Adam Skotarczak (C) 2025**.
+---
+
+## 🌐 Zugriff im Browser
+
+Sobald gestartet:
+
+```https
+https://<lokale-IP>:4443
+```
+
+Alternativ QR-Code scannen (GUI-Modus).  
+Dateien werden im `upload/<Client-IP>/` gespeichert.
+
+---
+
+## 📁 Logs & Uploads
+
+- **Uploads**: im Ordner `upload/` nach Client-IP
+- **Zentrale Logs**: `logs/pyupload.log`
+- **Pro-Client Logs**: `logs/<Client-IP>.log`
+
+---
+
+## 🔐 Hinweis zur SSL-Zertifikatswarnung
+
+Beim ersten Aufruf im Browser erscheint eine Warnung wegen des selbstsignierten Zertifikats.  
+Du kannst:
+
+- auf **„Erweitert“ > „Trotzdem fortfahren“** klicken
+- eigene Zertifikate in `cert.pem` und `key.pem` hinterlegen
+
+---
+
+## 👨‍💻 Autor
+
+- **Adam Skotarczak**  
+  Kontakt: [adam@skotarczak.net](mailto:adam@skotarczak.net)  
+  GitHub: [realAscot](https://github.com/realAscot)
+
+---
+
+## 📝 Lizenz
+
+- Proprietär, © 2025 Adam Skotarczak  
+  **Keine Weitergabe ohne ausdrückliche Genehmigung**
