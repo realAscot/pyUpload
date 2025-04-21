@@ -2,6 +2,9 @@
 
 ## pyUpload (TKInter-Version 1.0)
 
+
+
+
 - 2025-04-21  
 
   - Geändert  
@@ -17,6 +20,7 @@
     - Erweiterung der `README.md` um Speicherort der Uploads und Projektstruktur  
     - Hinweis auf Projektstatus und neue Version unter <https://github.com/realAscot/pyUpload2>  
     - Neue LICENSE-Datei (proprietär, nicht zur Weitergabe)  
+    - start.py hinzugefügt wenn auf manchen Systemen die Ausführung von .cmd und .bat gesperrt sind.
 
   - Fixes  
     - PowerShell-Inkompatibilitäten mit `set /p` entfernt  

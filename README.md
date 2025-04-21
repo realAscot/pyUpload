@@ -47,11 +47,18 @@ Sie ist vollständig lokal lauffähig – ganz ohne Installation von externen To
    start.cmd
    ```
 
-   Alternativ in PowerShell:
+   Alternativ in PowerShell:  
 
    ```powershell
    cmd /c start.cmd
    ```
+
+   ⚠️ **Alternative 2 falls die Ausführung per Doppelklick auf .bat oder .cmd gesperrt ist:**  
+
+   > Doppelklick auf -> `start.pyw`  
+
+   Es ist möglich das beim ersten mal gefragt wird womit das Programm gestartet werden soll.
+   Einfach die Python-Installation suchen und `python.exe` wählen.  
 
 ### 🐧 Für Linux / macOS:
 

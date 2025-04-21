@@ -1,9 +1,10 @@
 # Build- und Cache-Ordner ignorieren
-.app/__pycache__/
-.app/upload/
-.app/logs/
-.app/build/
-.app/dist/
+app/__pycache__/
+app/upload/
+app/upload/*
+app/logs/
+app/build/
+app/dist/
 releases/
 
 # PyInstaller & kompiliertes Python
@@ -14,13 +15,13 @@ releases/
 *.pyd
 
 # Virtuelle Umgebung ignorieren (falls vorhanden)
-.app/.venv/
-.app/.env/
-.app/.idea/
-.app/.vscode/
+app/.venv/
+app/.env/
+app/.idea/
+app/.vscode/
 
 # Zertifikate und sensible Dateien
-.app/*.pem
+app/*.pem
 *.crt
 *.key
 
