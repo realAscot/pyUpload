@@ -2,7 +2,9 @@
 
 # © 2025 Adam Skotarczak (adam@skotarczak.net)
 # Dieses Softwarepaket darf nicht ohne Genehmigung weiterverbreitet werden!
-# Version 1.0.0 (12.03.2025)
+#
+# Version 1.0.2 (22.04.2025 - virtuelle Umgebung korrekt aktiviert)
+# Manuel in z.B VS-Code: .\app\.venv\Scripts\activate
 
 import os
 import sys
@@ -16,17 +18,27 @@ VENV_DIR = os.path.join(BASE_DIR, ".venv")
 VENV_PYTHON = os.path.join(VENV_DIR, "Scripts", "python.exe") if os.name == "nt" else os.path.join(VENV_DIR, "bin", "python")
 REQUIREMENTS_FILE = os.path.join(BASE_DIR, "requirements.txt")
 
-# Wenn wir NICHT in der venv sind → prüfen, ob venv existiert
-if sys.prefix == sys.base_prefix and not os.path.exists(VENV_DIR):
-    print("[Setup] Virtuelle Umgebung wird erstellt...")
-    subprocess.run([sys.executable, "-m", "venv", "--copies", VENV_DIR], check=True)
+# Wenn wir NICHT in der venv sind
+if sys.prefix == sys.base_prefix:
+    # venv erstellen falls nötig
+    if not os.path.exists(VENV_DIR):
+        print("[Setup] Virtuelle Umgebung wird erstellt...")
+        subprocess.run([sys.executable, "-m", "venv", "--copies", VENV_DIR], check=True)
 
-    print("[Setup] requirements.txt wird installiert...")
-    subprocess.run([VENV_PYTHON, "-m", "pip", "install", "--upgrade", "pip"], check=True)
-    subprocess.run([VENV_PYTHON, "-m", "pip", "install", "-r", REQUIREMENTS_FILE], check=True)
+        print("[Setup] requirements.txt wird installiert...")
+        subprocess.run([VENV_PYTHON, "-m", "pip", "install", "--upgrade", "pip"], check=True)
+        subprocess.run([VENV_PYTHON, "-m", "pip", "install", "-r", REQUIREMENTS_FILE], check=True)
 
+    # unabhängig davon: Neustart innerhalb der venv
     print("[Setup] Starte erneut mit aktivierter Umgebung...")
-    os.execv(VENV_PYTHON, [VENV_PYTHON] + sys.argv)
+
+    if os.name == "nt":
+      subprocess.Popen([VENV_PYTHON] + sys.argv, creationflags=subprocess.CREATE_NEW_CONSOLE)
+    else:
+      os.execv(VENV_PYTHON, [VENV_PYTHON] + sys.argv)
+      sys.exit(0)
+
+    #os.execv(VENV_PYTHON, [VENV_PYTHON] + sys.argv)
 
 # Wir sind jetzt sicher in der richtigen Umgebung → Rest des Programms geht hier weiter:
 
@@ -59,8 +71,6 @@ def activate_venv():
         else:
             print(f"FEHLER: Virtuelle Umgebung nicht gefunden ({VENV_DIR}). Bitte zuerst install.cmd ausführen.")
             sys.exit(1)
-
-activate_venv()
 
 # -------------------------------------------------------------------
 # Globale Konfigurationen & Logging
