@@ -2,10 +2,16 @@
 
 ## pyUpload (TKInter-Version 1.0)
 
+- **2025-04-22 - v.1.0.2**
 
+- Behoben
+  -- Wrapper-Skript `start.py` erkennt nun fehlende `.venv` und startet `main.py` beim Erststart korrekt mit System-Python, danach mit venv (`start.py`).
+  -- `main.py` verwendet unter Windows statt `os.execv()` nun `subprocess.Popen(..., CREATE_NEW_CONSOLE)` für einen sauberen Neustart mit sichtbarer Konsole (`main.py`).
 
+- Entfernt
+  -- Nicht mehr benötigte Funktion `activate_venv()` entfernt (`main.py`).
 
-- 2025-04-21  
+- **2025-04-21 - v.1.0.1**  
 
   - Geändert  
     - `main.py` übernimmt nun automatisch die Erstellung der virtuellen Umgebung `.venv` und die Installation der Abhängigkeiten aus `requirements.txt`  
@@ -26,3 +32,6 @@
     - PowerShell-Inkompatibilitäten mit `set /p` entfernt  
     - `.cmd`-Startskripte reagieren jetzt korrekt auf STRG+C  
     - Mehrere Markdown-Korrekturen (Codeblöcke, Leerzeilen, Lesbarkeit)  
+
+- **2025-04-21 - v.1.0.0**  
+  - release!  
