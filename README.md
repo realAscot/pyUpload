@@ -11,7 +11,23 @@ Die neue Version mit Flask-Backend ist **BALD** verfügbar unter:
 
 ---
 
-## pyUpload – Sicherer Datei-Upload-Server über HTTPS (lokal & offline)
+- [pyUpload (TKInter Version)](#pyupload-tkinter-version)
+  - [⚠️ Projektstatus: Eingefroren – Nur noch Bugfixes](#️-projektstatus-eingefroren--nur-noch-bugfixes)
+  - [pyUpload – Sicherer Datei-Upload-Server über HTTPS (lokal \& offline)](#pyupload--sicherer-datei-upload-server-über-https-lokal--offline)
+  - [🛠 Features](#-features)
+  - [🚀 Schnellstart](#-schnellstart)
+    - [▶️ Für Windows:](#️-für-windows)
+    - [🐧 Für Linux / macOS:](#-für-linux--macos)
+  - [🧩 Kommandozeilenoptionen](#-kommandozeilenoptionen)
+  - [🌐 Zugriff im Browser](#-zugriff-im-browser)
+  - [📁 Logs \& Uploads](#-logs--uploads)
+  - [🔐 Hinweis zur SSL-Zertifikatswarnung](#-hinweis-zur-ssl-zertifikatswarnung)
+  - [🐛 Bekannte Bugs](#-bekannte-bugs)
+  - [👨‍💻 Autor](#-autor)
+  - [📝 Lizenz](#-lizenz)
+
+---
+## pyUpload – Sicherer Datei-Upload-Server über HTTPS (lokal & offline)  
 
 Diese Version basiert auf **Tkinter (GUI + QR)** sowie einer optionalen **reinen CLI-Nutzung**.  
 Sie ist vollständig lokal lauffähig – ganz ohne Installation von externen Tools oder komplexen Abhängigkeiten.
@@ -30,7 +46,7 @@ Sie ist vollständig lokal lauffähig – ganz ohne Installation von externen To
 
 ---
 
-## 🚀 Schnellstart
+## 🚀 Schnellstart  
 
 ### ▶️ Für Windows:
 
@@ -40,6 +56,9 @@ Sie ist vollständig lokal lauffähig – ganz ohne Installation von externen To
 
    git clone https://github.com/realAscot/pyUpload
    ```
+
+   Alternativ einfach eine bereinigte `.zip` bei den [Releases auf GitHub](https://github.com/realAscot/pyUpload/releases/) herrunterladen.
+   Diese enthällt kein `.git Archiv` und enthält nur das aller nötigste zum Betrieb des Programms.  
 
 2. Starte die App mit:  
 
@@ -59,6 +78,8 @@ Sie ist vollständig lokal lauffähig – ganz ohne Installation von externen To
 
    Es ist möglich das beim ersten mal gefragt wird womit das Programm gestartet werden soll.
    Einfach die Python-Installation suchen und `python.exe` wählen.  
+   
+   Ich empfehle einfach eine Verknüpfung der `start.pyw` zB auf den Desktop oder ins Startmenü zu legen.  
 
 ### 🐧 Für Linux / macOS:
 
@@ -92,10 +113,25 @@ Beim ersten Start wird automatisch:
 
 ## 🧩 Kommandozeilenoptionen
 
-```sh
-python app\main.py --nogui     # Start ohne GUI / QR
-python app\main.py --port 9999 # Custom-Port verwenden
+Du musst Dich im Verzeichnis `./app` befinden:  
+
+```cmd
+
+python main.py -h oder --h  # Hilfe
+python main.py --nogui      # Start ohne GUI / QR
+python main.py --port 9999  # Custom-Port verwenden
 ```
+
+oder für Verknüpfungen die `start.pyw` verwenden:  
+
+```cmd
+
+pythonw.exe start.pyw -h oder --h   # Hilfe
+pythonw.exe start.pyw --nogui       # Start ohne GUI / QR
+pythonw.exe start.pyw --port 9999   # Custom-Port verwenden
+```
+
+Wenn Du die Dateierweiterung `.pyw` mit `pythonw.exe` verknüpfst, klappt es auch ohne mit Doppelklick im Explorer :-)
 
 ---
 
@@ -104,11 +140,13 @@ python app\main.py --port 9999 # Custom-Port verwenden
 Sobald gestartet:
 
 ```https
-https://<lokale-IP>:4443
+https://<lokale-IP>:4443 (oder Port, der mit der option `--port` gestartet wurde)
 ```
 
 Alternativ QR-Code scannen (GUI-Modus).  
 Dateien werden im `upload/<Client-IP>/` gespeichert.
+
+Wichtig dabei ist es darauf zu achten, das tatsächlich auch https verwendet wird, falls man die Adresse händisch eingibt statt mit QR-Code! Man könnte noch zusätzlich einen http-server in der App laufen lassen, der dann automatisch umleitet, aber wir möchten das Programm so klein wie möglich halten.
 
 ---
 
@@ -130,6 +168,14 @@ Du kannst:
 
 ---
 
+## 🐛 Bekannte Bugs
+
+- **Frontend:** wenn im Browser der Button Hochladen gewählt wird, OHNE das Dateien ausgewählt wurden,
+  kommt es zu einem *Error response - Error code: 400* im Browser. Lösungsansatz wäre den Button über JS zu sperren solange keine Datei ausgewählt ist. Lässt sich schnell im [template](./app/template.html) erledigen.
+
+Wenn jemand Lust und Zeit hat sich diesem anzunehmen, nur zu. Ich Danke im Vorraus!
+
+---
 ## 👨‍💻 Autor
 
 - **Adam Skotarczak**  

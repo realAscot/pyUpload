@@ -38,8 +38,6 @@ if sys.prefix == sys.base_prefix:
       os.execv(VENV_PYTHON, [VENV_PYTHON] + sys.argv)
       sys.exit(0)
 
-    #os.execv(VENV_PYTHON, [VENV_PYTHON] + sys.argv)
-
 # Wir sind jetzt sicher in der richtigen Umgebung → Rest des Programms geht hier weiter:
 
 import ssl

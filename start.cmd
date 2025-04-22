@@ -11,9 +11,8 @@ if errorlevel 1 (
   exit /b 1
 )
 
-:: Verzeichnis von start.cmd ermitteln (robust, egal von wo gestartet)
+:: Verzeichnis von start.cmd ermitteln
 set SCRIPT_DIR=%~dp0
 
-:: Starte die Anwendung direkt aus app\
-python "%SCRIPT_DIR%app\main.py" %*
-
+:: Starte den Python-Wrapper, der .venv erkennt
+pythonw.exe "%SCRIPT_DIR%start.pyw" %*
