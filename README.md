@@ -22,11 +22,13 @@ Die neue Version mit Flask-Backend ist **BALD** verfügbar unter:
   - [🌐 Zugriff im Browser](#-zugriff-im-browser)
   - [📁 Logs \& Uploads](#-logs--uploads)
   - [🔐 Hinweis zur SSL-Zertifikatswarnung](#-hinweis-zur-ssl-zertifikatswarnung)
+  - [💡 Ideen für zukünftige Entwicklungen](#-ideen-für-zukünftige-entwicklungen)
   - [🐛 Bekannte Bugs](#-bekannte-bugs)
-  - [👨‍💻 Autor](#-autor)
+  - [👨‍💻 Autor und alle beteiligte](#-autor-und-alle-beteiligte)
   - [📝 Lizenz](#-lizenz)
 
 ---
+
 ## pyUpload – Sicherer Datei-Upload-Server über HTTPS (lokal & offline)  
 
 Diese Version basiert auf **Tkinter (GUI + QR)** sowie einer optionalen **reinen CLI-Nutzung**.  
@@ -152,19 +154,37 @@ Wichtig dabei ist es darauf zu achten, das tatsächlich auch https verwendet wir
 
 ## 📁 Logs & Uploads
 
-- **Uploads**: im Ordner `upload/` nach Client-IP
-- **Zentrale Logs**: `logs/pyupload.log`
-- **Pro-Client Logs**: `logs/<Client-IP>.log`
+- **Uploads**: im Ordner `upload/` nach Client-IP  
+- **Zentrale Logs**: `logs/pyupload.log`  
+- **Pro-Client Logs**: `logs/<Client-IP>.log`  
 
 ---
 
 ## 🔐 Hinweis zur SSL-Zertifikatswarnung
 
-Beim ersten Aufruf im Browser erscheint eine Warnung wegen des selbstsignierten Zertifikats.  
-Du kannst:
+⚠️ Beim ersten Aufruf im Browser erscheint möglicherweise eine Warnung wegen eines selbstsignierten SSL-Zertifikats. Das ist normal.  
 
-- auf **„Erweitert“ > „Trotzdem fortfahren“** klicken
-- eigene Zertifikate in `cert.pem` und `key.pem` hinterlegen
+- Über **„Erweitert“ > „Trotzdem fortfahren“** den Zugriff manuell freigeben  
+- Eigene Zertifikate in den Dateien `cert.pem` und `key.pem` hinterlegen  
+
+Damit dein Browser diese Warnung dauerhaft vermeidet, müssen die Zertifikate zu deiner verwendeten Domain passen.
+Da das in lokalen oder testnahen Umgebungen in der Regel nicht der Fall ist, lässt sich diese Warnung meist nicht vermeiden.  
+
+>💡 **Wichtig zu wissen:**  
+   Die Verbindung ist trotzdem Ende-zu-Ende verschlüsselt. Die Schlüssel werden bei jedem Start lokal neu generiert – direkt auf deinem Rechner.
+   Technisch ist die Verbindung also sicher. Dein Browser vertraut dem Zertifikat nur nicht, weil es nicht von einer offiziellen Zertifizierungsstelle stammt – sondern von dir selbst.  
+
+---
+
+## 💡 Ideen für zukünftige Entwicklungen
+
+Hier sind einige Vorschläge für zukünftige Erweiterungen.
+Dies ist eine offene Liste von Ideen für zukünftige Features oder Verbesserungen.
+Beiträge willkommen!
+
+- [ ] Link zum Server auf der GUI zum Testen klickbar.  
+- [ ] _____________________________________________________  
+- [ ] _____________________________________________________  
 
 ---
 
@@ -176,11 +196,14 @@ Du kannst:
 Wenn jemand Lust und Zeit hat sich diesem anzunehmen, nur zu. Ich Danke im Vorraus!
 
 ---
-## 👨‍💻 Autor
+
+## 👨‍💻 Autor und alle beteiligte
 
 - **Adam Skotarczak**  
   Kontakt: [adam@skotarczak.net](mailto:adam@skotarczak.net)  
   GitHub: [realAscot](https://github.com/realAscot)
+
+- **Du?**
 
 ---
 
