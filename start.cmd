@@ -15,4 +15,10 @@ if errorlevel 1 (
 set SCRIPT_DIR=%~dp0
 
 :: Starte den Python-Wrapper, der .venv erkennt
-pythonw.exe "%SCRIPT_DIR%start.pyw" %*
+if exist app\.venv\Scripts\python.exe (
+    python.exe "%SCRIPT_DIR%start.pyw" %*
+) else (
+    echo Erste Initialisierung erforderlich.
+    echo Starte Setup-Konsole...
+    start cmd /k python.exe "%SCRIPT_DIR%start.pyw" %*
+)

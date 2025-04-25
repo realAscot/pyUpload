@@ -1,18 +1,21 @@
-# pyUpload (TKInter Version)
+# pyUpload (TKinter-Version)
 
 ![pyUpload 1.0 Logo](./assets/logo-1.0-alpha.png)
 
 ## ⚠️ Projektstatus: Eingefroren – Nur noch Bugfixes  
 
 Diese Version von **pyUpload** wird **nicht weiterentwickelt** und erhält nur noch Fehlerbehebungen.  
-Die neue Version mit Flask-Backend ist **BALD** verfügbar unter:  
+Die neue Version mit Flask-Backend wird **bald** verfügbar sein unter:  
 
 🔗 **<https://github.com/realAscot/pyUpload2>**
 
 ---
 
-- [pyUpload (TKInter Version)](#pyupload-tkinter-version)
+## 📑 Inhalt der Readme
+
+- [pyUpload (TKinter-Version)](#pyupload-tkinter-version)
   - [⚠️ Projektstatus: Eingefroren – Nur noch Bugfixes](#️-projektstatus-eingefroren--nur-noch-bugfixes)
+  - [📑 Inhalt der Readme](#-inhalt-der-readme)
   - [pyUpload – Sicherer Datei-Upload-Server über HTTPS (lokal \& offline)](#pyupload--sicherer-datei-upload-server-über-https-lokal--offline)
   - [🛠 Features](#-features)
   - [🚀 Schnellstart](#-schnellstart)
@@ -24,7 +27,7 @@ Die neue Version mit Flask-Backend ist **BALD** verfügbar unter:
   - [🔐 Hinweis zur SSL-Zertifikatswarnung](#-hinweis-zur-ssl-zertifikatswarnung)
   - [💡 Ideen für zukünftige Entwicklungen](#-ideen-für-zukünftige-entwicklungen)
   - [🐛 Bekannte Bugs](#-bekannte-bugs)
-  - [👨‍💻 Autor und alle beteiligte](#-autor-und-alle-beteiligte)
+  - [## 👨‍💻 Autor und Beteiligte](#--autor-und-beteiligte)
   - [📝 Lizenz](#-lizenz)
 
 ---
@@ -33,6 +36,8 @@ Die neue Version mit Flask-Backend ist **BALD** verfügbar unter:
 
 Diese Version basiert auf **Tkinter (GUI + QR)** sowie einer optionalen **reinen CLI-Nutzung**.  
 Sie ist vollständig lokal lauffähig – ganz ohne Installation von externen Tools oder komplexen Abhängigkeiten.
+
+[🔝](#-inhalt-der-readme)
 
 ---
 
@@ -45,6 +50,8 @@ Sie ist vollständig lokal lauffähig – ganz ohne Installation von externen To
 - **GUI und Konsolen-Modus verfügbar**
 - **automatische Einrichtung von `.venv` und Abhängigkeiten**
 - **kein Installationsskript mehr nötig – alles passiert beim Start von `main.py`**
+
+[🔝](#-inhalt-der-readme)
 
 ---
 
@@ -60,7 +67,7 @@ Sie ist vollständig lokal lauffähig – ganz ohne Installation von externen To
    ```
 
    Alternativ einfach eine bereinigte `.zip` bei den [Releases auf GitHub](https://github.com/realAscot/pyUpload/releases/) herrunterladen.
-   Diese enthällt kein `.git Archiv` und enthält nur das aller nötigste zum Betrieb des Programms.  
+   Diese enthält kein `.git`-Archiv und nur das Allernötigste für den Betrieb des Programms.  
 
 2. Starte die App mit:  
 
@@ -76,12 +83,16 @@ Sie ist vollständig lokal lauffähig – ganz ohne Installation von externen To
 
    ⚠️ **Alternative 2 falls die Ausführung per Doppelklick auf .bat oder .cmd gesperrt ist:**  
 
-   > Doppelklick auf -> `start.pyw`  
+   Doppelklick auf `start.pyw` oder im Terminal mit:
 
-   Es ist möglich das beim ersten mal gefragt wird womit das Programm gestartet werden soll.
+   ```cmd
+   python start.pyw`
+   ```
+
+   Es ist möglich, dass beim ersten Mal gefragt wird, womit das Programm gestartet werden soll.
    Einfach die Python-Installation suchen und `python.exe` wählen.  
-   
-   Ich empfehle einfach eine Verknüpfung der `start.pyw` zB auf den Desktop oder ins Startmenü zu legen.  
+
+   Ich empfehle, eine Verknüpfung der `start.pyw` z. B. auf dem Desktop zu erstellen  
 
 ### 🐧 Für Linux / macOS:
 
@@ -111,6 +122,8 @@ Beim ersten Start wird automatisch:
 - `requirements.txt` installiert
 - das Programm danach neu aus der Umgebung gestartet
 
+[🔝](#-inhalt-der-readme)
+
 ---
 
 ## 🧩 Kommandozeilenoptionen
@@ -135,6 +148,8 @@ pythonw.exe start.pyw --port 9999   # Custom-Port verwenden
 
 Wenn Du die Dateierweiterung `.pyw` mit `pythonw.exe` verknüpfst, klappt es auch ohne mit Doppelklick im Explorer :-)
 
+[🔝](#-inhalt-der-readme)
+
 ---
 
 ## 🌐 Zugriff im Browser
@@ -150,6 +165,8 @@ Dateien werden im `upload/<Client-IP>/` gespeichert.
 
 Wichtig dabei ist es darauf zu achten, das tatsächlich auch https verwendet wird, falls man die Adresse händisch eingibt statt mit QR-Code! Man könnte noch zusätzlich einen http-server in der App laufen lassen, der dann automatisch umleitet, aber wir möchten das Programm so klein wie möglich halten.
 
+[🔝](#-inhalt-der-readme)
+
 ---
 
 ## 📁 Logs & Uploads
@@ -157,6 +174,8 @@ Wichtig dabei ist es darauf zu achten, das tatsächlich auch https verwendet wir
 - **Uploads**: im Ordner `upload/` nach Client-IP  
 - **Zentrale Logs**: `logs/pyupload.log`  
 - **Pro-Client Logs**: `logs/<Client-IP>.log`  
+
+[🔝](#-inhalt-der-readme)
 
 ---
 
@@ -172,7 +191,10 @@ Da das in lokalen oder testnahen Umgebungen in der Regel nicht der Fall ist, lä
 
 >💡 **Wichtig zu wissen:**  
    Die Verbindung ist trotzdem Ende-zu-Ende verschlüsselt. Die Schlüssel werden bei jedem Start lokal neu generiert – direkt auf deinem Rechner.
-   Technisch ist die Verbindung also sicher. Dein Browser vertraut dem Zertifikat nur nicht, weil es nicht von einer offiziellen Zertifizierungsstelle stammt – sondern von dir selbst.  
+   Technisch ist die Verbindung also sicher.
+   Dein Browser vertraut dem Zertifikat lediglich nicht, weil es nicht von einer offiziellen Zertifizierungsstelle stammt, sondern lokal erzeugt wurde.  
+
+[🔝](#-inhalt-der-readme)
 
 ---
 
@@ -186,6 +208,8 @@ Beiträge willkommen!
 - [ ] _____________________________________________________  
 - [ ] _____________________________________________________  
 
+[🔝](#-inhalt-der-readme)
+
 ---
 
 ## 🐛 Bekannte Bugs
@@ -193,11 +217,14 @@ Beiträge willkommen!
 - **Frontend:** wenn im Browser der Button Hochladen gewählt wird, OHNE das Dateien ausgewählt wurden,
   kommt es zu einem *Error response - Error code: 400* im Browser. Lösungsansatz wäre den Button über JS zu sperren solange keine Datei ausgewählt ist. Lässt sich schnell im [template](./app/template.html) erledigen.
 
-Wenn jemand Lust und Zeit hat sich diesem anzunehmen, nur zu. Ich Danke im Vorraus!
+Wenn jemand Lust und Zeit hat sich diesem anzunehmen, nur zu.
+Ich danke im Voraus!
+
+[🔝](#-inhalt-der-readme)
 
 ---
 
-## 👨‍💻 Autor und alle beteiligte
+## ## 👨‍💻 Autor und Beteiligte
 
 - **Adam Skotarczak**  
   Kontakt: [adam@skotarczak.net](mailto:adam@skotarczak.net)  
@@ -205,9 +232,10 @@ Wenn jemand Lust und Zeit hat sich diesem anzunehmen, nur zu. Ich Danke im Vorra
 
 - **Du?**
 
+[🔝](#-inhalt-der-readme)
+
 ---
 
 ## 📝 Lizenz
 
-- Proprietär, © 2025 Adam Skotarczak  
-  **Keine Weitergabe ohne ausdrückliche Genehmigung**
+MIT [LICENSE](./LICENSE) – frei verwendbar in eigenen Projekten bei Namensnennung.  

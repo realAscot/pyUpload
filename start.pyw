@@ -13,4 +13,5 @@ venv_python = os.path.join("app", ".venv", "Scripts", "python.exe") if os.name =
 python_exec = venv_python if os.path.exists(venv_python) else sys.executable
 
 # Starte main.py
-subprocess.run([python_exec, "app/main.py"] + sys.argv[1:])
+main_script = os.path.abspath(os.path.join("app", "main.py"))
+subprocess.run([python_exec, main_script] + sys.argv[1:])

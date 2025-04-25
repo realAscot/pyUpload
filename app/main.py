@@ -19,7 +19,7 @@ VENV_PYTHON = os.path.join(VENV_DIR, "Scripts", "python.exe") if os.name == "nt"
 REQUIREMENTS_FILE = os.path.join(BASE_DIR, "requirements.txt")
 
 # Wenn wir NICHT in der venv sind
-if sys.prefix == sys.base_prefix:
+if sys.prefix == sys.base_prefix and sys.executable != VENV_PYTHON:
     # venv erstellen falls nötig
     if not os.path.exists(VENV_DIR):
         print("[Setup] Virtuelle Umgebung wird erstellt...")
@@ -34,6 +34,7 @@ if sys.prefix == sys.base_prefix:
 
     if os.name == "nt":
       subprocess.Popen([VENV_PYTHON] + sys.argv, creationflags=subprocess.CREATE_NEW_CONSOLE)
+      sys.exit(0)
     else:
       os.execv(VENV_PYTHON, [VENV_PYTHON] + sys.argv)
       sys.exit(0)

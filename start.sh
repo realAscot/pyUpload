@@ -1,6 +1,7 @@
 #!/bin/bash
+set -e
 
-# Verzeichnis dieser Datei bestimmen
+# Absoluten Pfad zur start.pyw berechnen (falls per Symlink gestartet)
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Python-Interpreter prüfen
@@ -10,5 +11,5 @@ if ! command -v python3 &> /dev/null; then
   exit 1
 fi
 
-# Starte das Hauptskript
-python3 "$SCRIPT_DIR/app/main.py" "$@"
+# Direkt ausführen
+python3 "$SCRIPT_DIR/start.pyw" "$@"

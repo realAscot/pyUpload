@@ -1,0 +1,17 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Linter (pylint)",
+        "type": "shell",
+        "command": "pylint beispiel.py",
+        "group": "build"
+      },
+      {
+        "label": "Typprüfung (mypy)",
+        "type": "shell",
+        "command": "mypy beispiel.py",
+        "group": "build"
+      }
+    ]
+  }
