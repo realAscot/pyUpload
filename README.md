@@ -224,7 +224,7 @@ Ich danke im Voraus!
 
 ---
 
-## ## 👨‍💻 Autor und Beteiligte
+## 👨‍💻 Autor und Beteiligte
 
 - **Adam Skotarczak**  
   Kontakt: [adam@skotarczak.net](mailto:adam@skotarczak.net)  
