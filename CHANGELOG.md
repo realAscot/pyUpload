@@ -2,11 +2,17 @@
 
 ## pyUpload (TKInter-Version 1.0)
 
+- **2025-04-28 - v1.2.0**
+  - **Geändert:**  
+    - [x] `main.py` prüft nun zusätzlich, ob die virtuelle Umgebung auch funktioniert und nicht nur ob sie lediglich vorhanden ist.  
+
+---
+
 - **2025-04-25 - v1.1.0**
   - **Geändert:**  
     - [x] Lizenz auf __MIT__ mit Namensnennung umgestellt, siehe [LICENSE](./LICENSE)  
-
-    - [x] `main.py` prüft nun zusätzlich, ob bereits mit `pythonw.exe` gestartet wurde, um doppelten Start mit neuem Fenster zu vermeiden  
+    - [x] `main.py` prüft nun zusätzlich, ob bereits mit `pythonw.exe` gestartet wurde, um doppelten 
+           Start mit neuem Fenster zu vermeiden  
     - [x] `main.py` ruft nach `subprocess.Popen(...)` nun zuverlässig `sys.exit(0)` auf, um „leere“ Ursprungsfenster zu beenden  
     - [x] `start.cmd` verwendet jetzt `python.exe` statt `pythonw.exe`, wodurch nur noch **ein** Konsolenfenster erscheint – auch beim Setup  
     - [x] `start.sh` erkennt fehlendes `python3` und bricht mit Hinweis ab; Pfade werden sauber relativ berechnet

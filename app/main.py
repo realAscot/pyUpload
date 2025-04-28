@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 
 # © 2025 Adam Skotarczak (adam@skotarczak.net)
-# Dieses Softwarepaket darf nicht ohne Genehmigung weiterverbreitet werden!
 #
-# Version 1.0.2 (22.04.2025 - virtuelle Umgebung korrekt aktiviert)
-# Manuel in z.B VS-Code: .\app\.venv\Scripts\activate
+# Version 1.0.2 (28.04.2025 - virtuelle Umgebung korrekt aktiviert)
+# Manuell in z.B. VS-Code: .\app\.venv\Scripts\activate
+#
+# Original unter:
+# <https://github.com/realAscot/pyUpload/blob/main/app/main.py>
 
 import os
 import sys
@@ -19,7 +21,7 @@ VENV_PYTHON = os.path.join(VENV_DIR, "Scripts", "python.exe") if os.name == "nt"
 REQUIREMENTS_FILE = os.path.join(BASE_DIR, "requirements.txt")
 
 # Wenn wir NICHT in der venv sind
-if sys.prefix == sys.base_prefix and sys.executable != VENV_PYTHON:
+if (sys.prefix == sys.base_prefix and sys.executable != VENV_PYTHON) or not os.path.exists(VENV_PYTHON):
     # venv erstellen falls nötig
     if not os.path.exists(VENV_DIR):
         print("[Setup] Virtuelle Umgebung wird erstellt...")
