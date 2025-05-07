@@ -2,6 +2,16 @@
 
 ## pyUpload (TKInter-Version 1.0)
 
+- **2025-05-07 - v1.2.1**
+  - **Geändert:**  
+    - [x] `main.py` übergibt beim Neustart unter Linux jetzt einen **absoluten Pfad**, um Doppelpunkte wie `app/app/main.py` zu vermeiden.  
+    - [x] `start.pyw` berücksichtigt nun `venv`-Interpreter korrekt, wenn vorhanden, sonst fallback auf `sys.executable`.  
+    - [x] Erkennung von fehlendem `ensurepip`, mit Hinweis zur Installation von `python3-venv` bei Bedarf.  
+    - [x] Neue Warnung, wenn `tkinter` fehlt – ohne Abbruch, Upload-Server läuft dennoch im CLI-Modus weiter.  
+    - [x] README.md ergänzt um Setup-Hinweise für Linux bzgl. `python3-venv` und `python3-tk`.  
+
+---
+
 - **2025-04-28 - v1.2.0**
   - **Geändert:**  
     - [x] `main.py` prüft nun zusätzlich, ob die virtuelle Umgebung auch funktioniert und nicht nur ob sie lediglich vorhanden ist.  
