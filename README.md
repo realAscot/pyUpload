@@ -19,15 +19,15 @@ Die neue Version mit Flask-Backend wird **bald** verfügbar sein unter:
   - [pyUpload – Sicherer Datei-Upload-Server über HTTPS (lokal \& offline)](#pyupload--sicherer-datei-upload-server-über-https-lokal--offline)
   - [🛠 Features](#-features)
   - [🚀 Schnellstart](#-schnellstart)
-    - [▶️ Für Windows:](#️-für-windows)
-    - [🐧 Für Linux / macOS:](#-für-linux--macos)
+    - [▶️ Für Windows](#️-für-windows)
+    - [🐧 Für Linux / macOS](#-für-linux--macos)
   - [🧩 Kommandozeilenoptionen](#-kommandozeilenoptionen)
   - [🌐 Zugriff im Browser](#-zugriff-im-browser)
   - [📁 Logs \& Uploads](#-logs--uploads)
   - [🔐 Hinweis zur SSL-Zertifikatswarnung](#-hinweis-zur-ssl-zertifikatswarnung)
   - [💡 Ideen für zukünftige Entwicklungen](#-ideen-für-zukünftige-entwicklungen)
   - [🐛 Bekannte Bugs](#-bekannte-bugs)
-  - [## 👨‍💻 Autor und Beteiligte](#--autor-und-beteiligte)
+  - [👨‍💻 Autor und Beteiligte](#-autor-und-beteiligte)
   - [📝 Lizenz](#-lizenz)
 
 ---
@@ -57,7 +57,7 @@ Sie ist vollständig lokal lauffähig – ganz ohne Installation von externen To
 
 ## 🚀 Schnellstart  
 
-### ▶️ Für Windows:
+### ▶️ Für Windows
 
 1. Lade das Projekt herunter oder klone es:  
 
@@ -94,13 +94,27 @@ Sie ist vollständig lokal lauffähig – ganz ohne Installation von externen To
 
    Ich empfehle, eine Verknüpfung der `start.pyw` z. B. auf dem Desktop zu erstellen  
 
-### 🐧 Für Linux / macOS:
+### 🐧 Für Linux / macOS
 
 1. Stelle sicher, dass Python 3.8+ installiert ist:
 
    ```bash
    python3 --version
    ```
+
+   Stelle sicher, dass die nötigen Systempakete vorhanden sind:  
+
+   ```bash
+   sudo apt install python3-venv python3-tk
+   ```
+
+   Bei neueren Systemen mit z. B. Python 3.12:
+
+   ```bash
+   sudo apt install python3.12-venv python3.12-tk
+   ```
+
+   Dies trifft nicht bei allen Systemen zu, bei Ubuntu z.B muss TKinter händisch leider nachinstalliert werden.
 
 2. Mache das Startscript ausführbar:
 
@@ -189,10 +203,17 @@ Wichtig dabei ist es darauf zu achten, das tatsächlich auch https verwendet wir
 Damit dein Browser diese Warnung dauerhaft vermeidet, müssen die Zertifikate zu deiner verwendeten Domain passen.
 Da das in lokalen oder testnahen Umgebungen in der Regel nicht der Fall ist, lässt sich diese Warnung meist nicht vermeiden.  
 
->💡 **Wichtig zu wissen:**  
+> **Wichtig zu wissen:**  
    Die Verbindung ist trotzdem Ende-zu-Ende verschlüsselt. Die Schlüssel werden bei jedem Start lokal neu generiert – direkt auf deinem Rechner.
    Technisch ist die Verbindung also sicher.
    Dein Browser vertraut dem Zertifikat lediglich nicht, weil es nicht von einer offiziellen Zertifizierungsstelle stammt, sondern lokal erzeugt wurde.  
+
+   TKinter unter Linux:  
+
+> **Hinweis für Linux-Benutzer:**  
+   Falls die GUI nicht erscheint und stattdessen eine Warnung, wie `ModuleNotFoundError: No module named 'tkinter'`, liegt das daran,
+   dass `tkinter` unter Linux separat installiert werden muss.  
+   Siehe Abschnitt [🐧 Für Linux / macOS](#-für-linux--macos) für Details.  
 
 [🔝](#-inhalt-der-readme)
 

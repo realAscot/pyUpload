@@ -2,7 +2,7 @@
 
 # © 2025 Adam Skotarczak (adam@skotarczak.net)
 #
-# Version 1.0.2 (28.04.2025 - virtuelle Umgebung korrekt aktiviert)
+# Version 1.2.1 (07.05.2025 - Linux Test und Anpassungen im Bootstap)
 # Manuell in z.B. VS-Code: .\app\.venv\Scripts\activate
 #
 # Original unter:
@@ -38,7 +38,9 @@ if (sys.prefix == sys.base_prefix and sys.executable != VENV_PYTHON) or not os.p
       subprocess.Popen([VENV_PYTHON] + sys.argv, creationflags=subprocess.CREATE_NEW_CONSOLE)
       sys.exit(0)
     else:
-      os.execv(VENV_PYTHON, [VENV_PYTHON] + sys.argv)
+      main_script = os.path.join(BASE_DIR, "main.py")
+      os.execv(VENV_PYTHON, [VENV_PYTHON, main_script] + sys.argv[1:])
+
       sys.exit(0)
 
 # Wir sind jetzt sicher in der richtigen Umgebung → Rest des Programms geht hier weiter:
@@ -259,7 +261,11 @@ def run_server_with_gui(port):
     import qrcode
     import webbrowser
     from PIL import Image, ImageTk
-    import tkinter as tk
+    try:
+        import tkinter as tk
+    except ImportError:
+        print("⚠ Hinweis: tkinter ist nicht installiert. Für die GUI benötigst du:")
+        print("  sudo apt install python3-tk")
 
     httpd = create_https_server(port)
     server_ip = get_server_ip()
