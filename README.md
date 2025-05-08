@@ -27,7 +27,8 @@ Die neue Version mit Flask-Backend wird **bald** verfügbar sein unter:
   - [🔐 Hinweis zur SSL-Zertifikatswarnung](#-hinweis-zur-ssl-zertifikatswarnung)
   - [💡 Ideen für zukünftige Entwicklungen](#-ideen-für-zukünftige-entwicklungen)
   - [🐛 Bekannte Bugs](#-bekannte-bugs)
-  - [## 👨‍💻 Autor und Beteiligte](#--autor-und-beteiligte)
+  - [🤖 Autor und Beteiligte](#-autor-und-beteiligte)
+  - [☕ Support](#-support)
   - [📝 Lizenz](#-lizenz)
 
 ---
@@ -224,7 +225,7 @@ Ich danke im Voraus!
 
 ---
 
-## 👨‍💻 Autor und Beteiligte
+## 🤖 Autor und Beteiligte
 
 - **Adam Skotarczak**  
   Kontakt: [adam@skotarczak.net](mailto:adam@skotarczak.net)  
@@ -233,6 +234,13 @@ Ich danke im Voraus!
 - **Du?**
 
 [🔝](#-inhalt-der-readme)
+
+---
+
+## ☕ Support
+
+Wenn dir dieses Projekt gefällt, kannst du mich hier unterstützen:  
+☕ [paypal.me/AdamSkotarczak](https://www.paypal.me/AdamSkotarczak)  
 
 ---
 
