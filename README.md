@@ -27,7 +27,8 @@ Die neue Version mit Flask-Backend wird **bald** verfügbar sein unter:
   - [🔐 Hinweis zur SSL-Zertifikatswarnung](#-hinweis-zur-ssl-zertifikatswarnung)
   - [💡 Ideen für zukünftige Entwicklungen](#-ideen-für-zukünftige-entwicklungen)
   - [🐛 Bekannte Bugs](#-bekannte-bugs)
-  - [👨‍💻 Autor und Beteiligte](#-autor-und-beteiligte)
+  - [🤖 Autor und Beteiligte](#-autor-und-beteiligte)
+  - [☕ Support](#-support)
   - [📝 Lizenz](#-lizenz)
 
 ---
@@ -236,7 +237,8 @@ Beiträge willkommen!
 ## 🐛 Bekannte Bugs
 
 - **Frontend:** wenn im Browser der Button Hochladen gewählt wird, OHNE das Dateien ausgewählt wurden,
-  kommt es zu einem *Error response - Error code: 400* im Browser. Lösungsansatz wäre den Button über JS zu sperren solange keine Datei ausgewählt ist. Lässt sich schnell im [template](./app/template.html) erledigen.
+  kommt es zu einem *Error response - Error code: 400* im Browser.
+  Lösungsansatz wäre den Button über JS zu sperren solange keine Datei ausgewählt ist. Lässt sich schnell im [template](./app/template.html) erledigen.
 
 Wenn jemand Lust und Zeit hat sich diesem anzunehmen, nur zu.
 Ich danke im Voraus!
@@ -245,7 +247,7 @@ Ich danke im Voraus!
 
 ---
 
-## 👨‍💻 Autor und Beteiligte
+## 🤖 Autor und Beteiligte
 
 - **Adam Skotarczak**  
   Kontakt: [adam@skotarczak.net](mailto:adam@skotarczak.net)  
@@ -254,6 +256,13 @@ Ich danke im Voraus!
 - **Du?**
 
 [🔝](#-inhalt-der-readme)
+
+---
+
+## ☕ Support
+
+Wenn dir dieses Projekt gefällt, kannst du mich hier unterstützen:  
+☕ [paypal.me/AdamSkotarczak](https://www.paypal.me/AdamSkotarczak)  
 
 ---
 
