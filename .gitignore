@@ -36,3 +36,6 @@ Thumbs.db
 # Custom:
 *kopie*
 gitcopy.bat
+
+# IDE
+.vscode/

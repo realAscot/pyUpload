@@ -4,10 +4,15 @@
 
 ## ⚠️ Projektstatus: Eingefroren – Nur noch Bugfixes  
 
-Diese Version von **pyUpload** wird **nicht weiterentwickelt** und erhält nur noch Fehlerbehebungen.  
-Die neue Version mit Flask-Backend wird **bald** verfügbar sein unter:  
+> Diese Version von **pyUpload** wird **nicht weiterentwickelt** und erhält nur noch Fehlerbehebungen.  
+> Die neue Version mit Flask-Backend wird **bald** verfügbar sein unter:  
 
 🔗 **<https://github.com/realAscot/pyUpload2>**
+
+**DIESE** Version ist aber voll funktionsfähig, sowohl die reine Python-Version wie auch die Windows `.exe`  
+
+- (<https://github.com/realAscot/pyUpload/releases/tag/v1.0.0-alpha>)  
+  Dem Programm liegen bootstrap Routinen bei die alle notwendigen Biblioteken nachinstallieren.
 
 ---
 

@@ -4,6 +4,13 @@
 
 - **2025-05-07 - v1.2.1**
   - **Geändert:**  
+    - [x] Logo angepasst und kleine belanglose Änderungen
+    - [X] (C) aus LICENSE entfernt
+
+---
+
+- **2025-05-07 - v1.2.1**
+  - **Geändert:**  
     - [x] `main.py` übergibt beim Neustart unter Linux jetzt einen **absoluten Pfad**, um Doppelpunkte wie `app/app/main.py` zu vermeiden.  
     - [x] `start.pyw` berücksichtigt nun `venv`-Interpreter korrekt, wenn vorhanden, sonst fallback auf `sys.executable`.  
     - [x] Erkennung von fehlendem `ensurepip`, mit Hinweis zur Installation von `python3-venv` bei Bedarf.  
